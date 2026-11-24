@@ -1,0 +1,76 @@
+﻿@model Ahmad_MVC.Models.Entity.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>User Details</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            background-color: blue;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>User Details</h2>
+
+        <hr />
+
+        <p>
+            <strong>ID:</strong> @Model.Id
+        </p>
+
+        <p>
+            <strong>Username:</strong> @Model.Username
+        </p>
+
+        <p>
+            <strong>Email:</strong> @Model.Email
+        </p>
+
+        <p>
+            <strong>User Role:</strong> @Model.Userrole
+        </p>
+
+        <a asp-action="Index">Back to List</a>
+
+    </div>
+
+</body>
+</html>

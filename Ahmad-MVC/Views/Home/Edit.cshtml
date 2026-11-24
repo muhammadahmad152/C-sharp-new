@@ -1,0 +1,49 @@
+﻿@model Ahmad_MVC.Models.Entity.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit User</title>
+</head>
+<body>
+
+    <h2>Edit User</h2>
+
+    <form asp-action="Edit" method="post">
+
+        <input type="hidden" asp-for="Id" />
+
+        <div>
+            <label>Username</label>
+            <input asp-for="Username" />
+        </div>
+
+        <br />
+
+        <div>
+            <label>Email</label>
+            <input asp-for="Email" />
+        </div>
+
+        <br />
+
+        <div>
+            <label>User Role</label>
+            <input asp-for="Userrole" />
+        </div>
+
+        <br />
+
+        <button type="submit">Update</button>
+
+        <a asp-action="Index">Back to List</a>
+
+    </form>
+
+</body>
+</html>

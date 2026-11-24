@@ -9,8 +9,10 @@ namespace Ahmad_MVC
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Add MVC services
             builder.Services.AddControllersWithViews();
 
+            // Database connection
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     builder.Configuration.GetConnectionString("SQLKEY")
@@ -18,6 +20,7 @@ namespace Ahmad_MVC
 
             var app = builder.Build();
 
+            // Configure middleware
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -30,6 +33,7 @@ namespace Ahmad_MVC
 
             app.MapStaticAssets();
 
+            // Default routing
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
